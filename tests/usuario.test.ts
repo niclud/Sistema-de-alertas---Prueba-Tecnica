@@ -42,5 +42,19 @@ describe("Usuario", () => {
 
         expect(usuario.getAlertasNoLeidas()).toEqual([alerta3, alerta2]);     
         }
-    )  
+    ),
+    
+    test('Agregar tema suscripto', () => {
+        const temaAlerta1 = new TemaAlerta(1, 'Tema 1', 'Descripcion tema 1');
+        const temaAlerta2 = new TemaAlerta(2, 'Tema 2', 'Descripcion tema 2');
+        const temas = [temaAlerta1];
+
+        const usuario = new Usuario('Juan', 'Perez', 'juan@gmail.com', '123456', temas);
+
+        usuario.pushTemaSuscripto(temaAlerta2);
+
+        expect(usuario.getTemasSuscriptos()).toEqual([temaAlerta1, temaAlerta2]);     
+        
+    })
+
 });
