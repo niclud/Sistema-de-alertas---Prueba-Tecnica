@@ -4,7 +4,7 @@
         "moduleResolution": "Node",
         "target": "ES2020",
         "jsx": "react",
-        "allowImportingTsExtensions": true,
+        "allowImportingTsExtensions": false,
         "strictNullChecks": true,
         "strictFunctionTypes": true
     },

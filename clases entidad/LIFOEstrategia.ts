@@ -1,5 +1,5 @@
-import { OrdenamientoEstrategia } from "../interfaces/OrdenamientoEstrategia";
-import { Alerta } from "./Alerta";
+import { OrdenamientoEstrategia } from "../interfaces/OrdenamientoEstrategia.ts";
+import { Alerta } from "./Alerta.ts";
 
 export class LIFOEstrategia implements OrdenamientoEstrategia {
     public ordenarAlertas(alertas: Alerta[]): Alerta[] {

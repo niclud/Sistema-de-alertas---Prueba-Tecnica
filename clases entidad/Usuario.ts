@@ -1,8 +1,10 @@
-import { Observador } from "../interfaces/Observador";
-import { Alerta } from "./Alerta";
-import { FIFOEstrategia } from "./FIFOEstrategia";
-import { LIFOEstrategia } from "./LIFOEstrategia";
-import { TemaAlerta } from "./TemaAlerta";
+import { Observador } from "../interfaces/Observador.ts";
+import { OrdenamientoEstrategia } from "../interfaces/OrdenamientoEstrategia.ts";
+import { Alerta } from "./Alerta.ts";
+import { FIFOEstrategia } from "./FIFOEstrategia.ts";
+import { LIFOEstrategia } from "./LIFOEstrategia.ts";
+import { TemaAlerta } from "./TemaAlerta.ts";
+
 
 export class Usuario implements Observador {
     private nombre: string;
@@ -89,9 +91,15 @@ export class Usuario implements Observador {
     }
 
     public ordenarAlertas(alertas: Alerta[]): Alerta[] {
-        let alertasUrgentes: Alerta[] = this.ordenamientoLIFO.ordenarAlertas(alertas.filter(alerta => alerta.getTipo() == 'Urgente'));
-        let alertasInformativas: Alerta[] = this.ordenamientoFIFO.ordenarAlertas(alertas.filter(alerta => alerta.getTipo() == 'Informativa'));
+        let alertasUrgentes: Alerta[] = this.ordenarAlertasPorEstrategia(alertas.filter(alerta => alerta.getTipo() == 'Urgente'), this.ordenamientoLIFO);
+        let alertasInformativas: Alerta[] = this.ordenarAlertasPorEstrategia(alertas.filter(alerta => alerta.getTipo() == 'Informativa'), this.ordenamientoFIFO);
+        // let alertasUrgentes: Alerta[] = this.ordenamientoLIFO.ordenarAlertas(alertas.filter(alerta => alerta.getTipo() == 'Urgente'));
+        // let alertasInformativas: Alerta[] = this.ordenamientoFIFO.ordenarAlertas(alertas.filter(alerta => alerta.getTipo() == 'Informativa'));
         return alertasUrgentes.concat(alertasInformativas);
+    }
+
+    public ordenarAlertasPorEstrategia(alertas: Alerta[], tipoOrdenamiento: OrdenamientoEstrategia): Alerta[] {
+        return tipoOrdenamiento.ordenarAlertas(alertas);
     }
 
 

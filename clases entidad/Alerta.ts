@@ -1,8 +1,8 @@
-import { Observador } from "../interfaces/Observador";
-import { SujetoObservable } from "../interfaces/SujetoObservable";
-import { TipoAlerta } from "../interfaces/TipoAlerta";
-import { TemaAlerta } from "./TemaAlerta";
-import { Usuario } from "./Usuario";
+import { Observador } from "../interfaces/Observador.ts";
+import { SujetoObservable } from "../interfaces/SujetoObservable.ts";
+import { TipoAlerta } from "../interfaces/TipoAlerta.ts";
+import { TemaAlerta } from "./TemaAlerta.ts";
+import { Usuario } from "./Usuario.ts";
 
 export class Alerta implements SujetoObservable {
     private destinatarios: Array<Usuario>;

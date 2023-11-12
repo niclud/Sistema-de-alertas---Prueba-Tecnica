@@ -8,5 +8,9 @@ module.exports = {
       "/node_modules/", 
       "/\\.vscode/",    
     ],
+    moduleNameMapper: {
+    // Elimina las extensiones .ts de las rutas de importación
+    '(.*)\\.ts$': '$1'
+  },
 
 };

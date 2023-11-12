@@ -17,7 +17,6 @@ export class TemaAlerta {
         return this.nombre;
     }
 
-
     public setNombre(nombre: string): void {
         this.nombre = nombre;
     }
