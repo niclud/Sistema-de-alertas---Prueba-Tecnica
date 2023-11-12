@@ -1,0 +1,1 @@
+export type TipoAlerta = 'Informativa' | 'Urgente'
