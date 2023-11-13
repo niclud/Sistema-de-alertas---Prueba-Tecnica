@@ -62,15 +62,28 @@ export class Alerta implements SujetoObservable {
     }
 
 
+    /**
+     * Registra un usuario como observador de la alerta.
+     * @param {Usuario} observador 
+     * @returns {void}
+    */
     public registrarObservador(observador: Usuario): void {
         console.log(`El usuario ${observador.getNombre()} ${observador.getApellido()} ha sido registrado como observador de la alerta ${this.descripcion} por el tema ${this.tema.getDescripcion()}`);
         this.destinatarios.push(observador);
     }
 
+    /**
+     * Elimina un usuario como observador de la alerta.
+     * @param {Observador} observador 
+     */
     public removerObservador(observador: Observador): void {
         this.destinatarios = this.destinatarios.filter(destinatario => destinatario !== observador);
     }
 
+    /**
+     * Notifica a todos los observadores de la alerta ejecutando el metodo polimorfico de los observadores.
+     * @returns {void}
+     */
     public notificarObservadores(): void {
         this.destinatarios.forEach(destinatario => {
             if(destinatario.getTemasSuscriptos().includes(this.tema)){
@@ -79,12 +92,21 @@ export class Alerta implements SujetoObservable {
         });
     }
 
+    /**
+     * Notifica a un observador de la alerta ejecutando el metodo polimorfico del observador.
+     * @param {Observador} observador 
+     * @returns {void}
+     */
     public notificarObservador(observador: Usuario): void {
         if(this.destinatarios.includes(observador)){
             observador.actualizar(this);
         }
     }
 
+    /**
+     * Verifica si la alerta esta vigente en base a la fecha de expiracion.
+     * @returns {boolean}
+     */
     public estaVigente(): boolean {
         return this.fechaExp > new Date();
     }
