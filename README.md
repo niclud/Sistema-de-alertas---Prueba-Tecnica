@@ -27,14 +27,15 @@ El proyecto se organiza en:
 - **Clases de entidad:** Aquí se definen las clases base como `Alerta`, `TemaAlerta`, `Usuario`, entre otras.
 - **Patrones de diseño:** Los patrones Observer y Strategy están implementados en las clases relacionadas con la gestión de alertas y usuarios.
 - **Pruebas unitarias:** La lógica está respaldada por pruebas que cubren casos de uso comunes.
+- **Clase de control:** Una clase gestor de alerta que que manejan la lógica de control, coordinando la interacción y el flujo de datos entre otras clases y componentes. 
 
 ## Cómo ejecutar el proyecto
 
 Asegúrate de tener instalado Node.js y las dependencias necesarias:
 
-<!-- ```bash -->
+```bash
 npm install
-
+```
 
 ## Ejecución con Deno
 
@@ -44,29 +45,42 @@ Este proyecto se ha desarrollado en TypeScript y se puede ejecutar en Deno, un e
 
 Si aún no tienes Deno instalado, puedes hacerlo mediante el siguiente comando en tu terminal:
 
-<!-- ```bash -->
+```bash
 curl -fsSL https://deno.land/x/install/install.sh | sh
+```
 
 Windows
+``` bash
 iwr https://deno.land/x/install/install.ps1 -useb | iex
+```
 
 Para verificar que se instale ejecutar
+``` bash
 deno --version
+```
 
 Para ejecutar el archivo main que hace un posible flujo del sistema
+
+``` bash
 deno run --allow-read --allow-write main.ts
+```
 
 ## Cómo ejecutar los test
 
 Asegurate de tener instalado Jest y de tener el archivo jest.config.js bien configuardo
+
+``` bash
 npm install jest ts-jest @types/jest -D
+```
 
-Para ejecutar los test solo basta con ejecutar 
-```bash
-todos los test en conjunto
+Para ejecutar los test solo basta con ejecutar si se quieren ejecutar todos los test juntos
+
+``` bash
 npx jest
+```
 
-un solo test
-npx jest "nombre-del-test" 
-
+Para ejecutar un test especifico
+``` bash
+npx jest "nombre-test"
+```
 
