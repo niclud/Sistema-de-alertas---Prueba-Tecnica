@@ -8,7 +8,7 @@ Este proyecto implementa un sistema de alertas que se basa en el patrón de dise
 El sistema de alertas está diseñado para:
 
 - **Usuarios:** Permite a los usuarios suscribirse a diferentes temas de alerta y recibir notificaciones sobre las alertas de interés.
-- **Alertas:** Pueden tener varios temas asociados, diferentes tipos (Urgente, Informativa) y una fecha y hora de expiración.
+- **Alertas:** Pueden tener un tema asociado, diferentes tipos (Urgente, Informativa) y una fecha y hora de expiración.
 
 ## Patrones de diseño utilizados
 
@@ -32,8 +32,9 @@ El proyecto se organiza en:
 
 Asegúrate de tener instalado Node.js y las dependencias necesarias:
 
-```bash
+<!-- ```bash -->
 npm install
+
 
 ## Ejecución con Deno
 
@@ -43,7 +44,7 @@ Este proyecto se ha desarrollado en TypeScript y se puede ejecutar en Deno, un e
 
 Si aún no tienes Deno instalado, puedes hacerlo mediante el siguiente comando en tu terminal:
 
-```bash
+<!-- ```bash -->
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
 Windows
