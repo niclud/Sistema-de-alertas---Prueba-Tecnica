@@ -61,6 +61,12 @@ deno run --allow-read --allow-write main.ts
 Asegurate de tener instalado Jest y de tener el archivo jest.config.js bien configuardo
 npm install jest ts-jest @types/jest -D
 
-Para ejecutar los test solo basta con ejecutar npx jest
+Para ejecutar los test solo basta con ejecutar 
+```bash
+todos los test en conjunto
+npx jest
+
+un solo test
+npx jest "nombre-del-test" 
 
 
