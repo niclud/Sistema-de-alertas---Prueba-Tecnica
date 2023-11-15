@@ -10,7 +10,7 @@ El sistema de alertas está diseñado para:
 - **Usuarios:** Permite a los usuarios suscribirse a diferentes temas de alerta y recibir notificaciones sobre las alertas de interés.
 - **Alertas:** Pueden tener un tema asociado, diferentes tipos (Urgente, Informativa) y una fecha y hora de expiración.
 
-## Patrones de diseño utilizados
+## Patrones de diseño encontrados en el enunciado
 
 ### Observer
 
@@ -19,6 +19,10 @@ El patrón Observer se aplica para notificar a los usuarios suscritos sobre las 
 ### Strategy
 
 El patrón Strategy se utiliza para manejar estrategias de ordenamiento de alertas. Por ejemplo, se pueden implementar diferentes estrategias de ordenamiento de alertas no leídas, como FIFO (First In, First Out) o LIFO (Last In, First Out).
+
+### State
+
+Se podria plicar el patron state para las alertas, siendo los estados de la misma `Leida`, `No Leida`, `Expirada`. Pero de la forma que lo resolvi creo haber cumplido con los requerimientos del enunciado 
 
 ## Estructura del código
 
